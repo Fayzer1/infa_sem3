@@ -4,7 +4,7 @@
 int main()
 {
 	char symbols[MAX_SIZE];
-	int repeat[MAX_SIZE];
+	int count_repeat[MAX_SIZE];
 	char universal_symbols[MAX_SIZE];
 	int input;
 	int symbol_number = 0;
@@ -51,18 +51,28 @@ int main()
 			if (universal_symbols[i] == symbols[j])
 				count++;
 		}
-		repeat[i] = count;
+		count_repeat[i] = count;
 		count = 0;
 	}
 
-/*
+
+
+	printf("%d\n", universal_number);
+
 	for (int i = 0; i < universal_number; i++)
 	{
-		printf("%d ", repeat[i]);
+		printf("%d ", count_repeat[i]);
 	}
 	putchar('\n');
-*/
 
 
+
+	for (int i = 0; i < universal_number; i++)
+	{
+		printf("%c: ", universal_symbols[i]);
+		for (int j = 0; j < count_repeat[i]; j++)
+			putchar('#');
+		putchar('\n');
+	}
 
 }
